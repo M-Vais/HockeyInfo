@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HockeyInfo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_player_info">PlayerInfoActivity</string>
+    <color name="blue">#232937</color>
+    <color name="line">#BDBDBD</color>
+
+</resources>

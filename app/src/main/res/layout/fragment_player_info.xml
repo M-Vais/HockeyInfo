@@ -1,0 +1,165 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.vaism_000.hockeyinfo.PlayerInfoFragment">
+
+    <TableLayout
+        android:id="@+id/playerInfoTable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/name"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/hofRow"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/hallOfFame"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"/>
+        </TableRow>
+
+        <TableRow android:layout_height="1px" android:background="#BDBDBD">
+            <TextView android:layout_span="2" android:layout_height="1px"
+                android:layout_width="fill_parent" android:text="">
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+            <TextView
+                android:text="Draft"
+                android:paddingLeft="5dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:paddingRight="5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4.0"
+                android:gravity="right"
+                android:id="@+id/draft"/>
+        </TableRow>
+
+        <TableRow android:layout_height="1px" android:background="#BDBDBD">
+            <TextView android:layout_span="2" android:layout_height="1px"
+                android:layout_width="fill_parent" android:text="">
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+            <TextView
+                android:text="Birthdate"
+                android:paddingLeft="5dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:paddingRight="5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4.0"
+                android:gravity="right"
+                android:id="@+id/birthdate"/>
+        </TableRow>
+
+        <TableRow android:layout_height="1px" android:background="#BDBDBD">
+            <TextView android:layout_span="2" android:layout_height="1px"
+                android:layout_width="fill_parent" android:text="">
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+            <TextView
+                android:text="Position"
+                android:paddingLeft="5dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:paddingRight="5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4.0"
+                android:gravity="right"
+                android:id="@+id/position"/>
+        </TableRow>
+
+        <TableRow android:layout_height="1px" android:background="#BDBDBD">
+            <TextView android:layout_span="2" android:layout_height="1px"
+                android:layout_width="fill_parent" android:text="">
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+            <TextView
+                android:text="Shoot/Catch"
+                android:paddingLeft="5dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:paddingRight="5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.0"
+                android:gravity="right"
+                android:id="@+id/shoots"/>
+            </TableRow>
+
+            <TableRow android:layout_height="1px" android:background="#BDBDBD">
+                <TextView android:layout_span="2" android:layout_height="1px"
+                    android:layout_width="fill_parent" android:text="">
+                </TextView>
+            </TableRow>
+
+        <TableRow
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+            <TextView
+                android:text="Height/Weight"
+                android:paddingLeft="5dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:paddingRight="5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.0"
+                android:gravity="right"
+                android:id="@+id/heightAndWeight"/>
+        </TableRow>
+
+        <TableRow android:layout_height="1px" android:background="#BDBDBD">
+            <TextView android:layout_span="2" android:layout_height="1px"
+                android:layout_width="fill_parent" android:text="">
+            </TextView>
+        </TableRow>
+
+    </TableLayout>
+
+</FrameLayout>
