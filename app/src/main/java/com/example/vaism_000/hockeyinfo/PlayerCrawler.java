@@ -54,7 +54,7 @@ public class PlayerCrawler implements Parcelable {
     }
 
     private void getPersonalInfo() {
-        Elements player = doc.select("div.clear_left");
+        Elements player = doc.select("div#meta");
         String[] stats = player.text().split("(?=Position:|Shoots:|Height:|Weight:|Born:|Died:|"
                 + "Hall of Fame:|Draft:|Contract:|Catches:|As Coach:)");
 
@@ -62,13 +62,18 @@ public class PlayerCrawler implements Parcelable {
         for (int i = 1; i < stats.length; i++) {
             if (stats[i].contains("Position")) {
                 this.position = getPosition(stats[i]);
-            } if (stats[i].contains("Shoots")) {
-                this.shoots = getShoot(stats[i]);
-            } if (stats[i].contains("Height")) {
-                this.height = getHeight(stats[i]);
-            } if (stats[i].contains("Weight")) {
-                this.weight = getWeight(stats[i]);
-            } if (stats[i].contains("Draft")) {
+            }
+            if (stats[i].contains("Shoots")) {
+                if (getShoot(stats[i]).contains("Left")) {
+                    this.shoots = "Left";
+                } else {
+                    this.shoots = "Right";
+                }
+
+                this.height = player.select("span").get(0).text();
+                this.weight = player.select("span").get(1).text();
+            }
+            if (stats[i].contains("Draft")) {
                 this.drafted = getDraft(stats[i]);
             } if (stats[i].contains("Hall of Fame")) {
                 this.hallOfFame = getHOF(stats[i]);
@@ -172,7 +177,10 @@ public class PlayerCrawler implements Parcelable {
         String[] statsRow; // Temporary array holding values of stats per row
         int count;
 
-        Elements playoff = doc.select("#stats_playoffs_nhl > tbody > tr");
+        Elements playoff = doc.select("#div_stats_playoffs_nhl > table > tbody > tr");
+
+        System.out.println(playoff.html());
+
         // Iterate through each row for each season
         for (Element row : playoff) {
             count = 0;
@@ -196,7 +204,7 @@ public class PlayerCrawler implements Parcelable {
         String[] statsRow; // Temporary array holding values of stats per row
         int count;
 
-        Elements season = doc.select("#stats_basic_nhl > tbody > tr");
+        Elements season = doc.select("div#div_stats_basic_nhl > table > tbody > tr");
         // Iterate through each row for each season
         for (Element row : season) {
             count = 0;
@@ -218,7 +226,13 @@ public class PlayerCrawler implements Parcelable {
 
 
     private void getPlayerSeasonStats() {
-        Elements season = doc.select("#stats_basic_nhl > tbody > tr");
+
+        Elements season = doc.select("div#div_stats_basic_nhl > table > tbody > tr");
+
+        if (season.isEmpty()) {
+            season = doc.select("#div_stats_basic_plus_nhl > table > tbody > tr");
+        }
+
         for (Element row : season) {
             this.seasonStats.add(row.text().split(" "));
         }

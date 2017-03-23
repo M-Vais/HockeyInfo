@@ -34,6 +34,9 @@ public class SearchCrawlerTask extends AsyncTask<String, Void, Document> {
         searchURL = getSearchURL(searchInput);
 
         // Connection to site
+
+        System.out.println("URL: " + searchURL);
+
         try {
             this.doc = Jsoup.connect(searchURL).get();
         } catch (IOException e) {
@@ -89,7 +92,8 @@ public class SearchCrawlerTask extends AsyncTask<String, Void, Document> {
 
     private boolean isSearchResult() {
         // Returns true iff the result returns search results
-        Elements searchResult = this.doc.select("div.search-results");
+        Elements searchResult = this.doc.select("#players");
+
         if(searchResult.isEmpty()) {
             return false;
         }
@@ -99,7 +103,7 @@ public class SearchCrawlerTask extends AsyncTask<String, Void, Document> {
     }
 
     private HashMap<String, String> getSearchResult() {
-        Elements search = doc.select(".search-page-active").first().select(".search-item");
+        Elements search = doc.select("#players").first().select(".search-item");
         for (Element el : search) {
             String playerName = el.select("a").first().text().trim();
             String playerURL = el.select("a").first().attr("href").trim();
