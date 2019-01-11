@@ -1,2 +1,3 @@
-# HockeyInfo
-This is an outdated android app that allows you to search players in NHL/WHA. The scraper is currently outdated. I have plans on updating the scraper and the user interface to be a more complete app. 
+## hockey-info
+
+An outdated android prototype that allowed users to search hockey players from [hockey-reference](https://www.hockey-reference.com). I built this app to test the performance and capability of scraping a website on android.
